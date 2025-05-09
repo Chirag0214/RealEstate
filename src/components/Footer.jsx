@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
         
         {/* Company Info */}
-        <div>
-      <span><img src="/Dream Home (Postcards).png" alt="Drem Home logo" /></span> <h2 className="text-2xl font-bold mb-3"><i>DREAM HOME</i></h2>
+        <div className='flex items-center'>
+      <span><img className='size-15' src="/Dream Home (Postcards).png" alt="Drem Home logo" /></span> <h2 className="text-2xl font-bold mb-3"><i>DREAM HOME</i></h2>
           <p className="text-sm">
             Helping you find your perfect property — homes, apartments, and commercial spaces across India.
           </p>
