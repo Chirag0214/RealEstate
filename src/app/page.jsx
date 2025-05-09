@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-<login1/>
+
 const Home = () => {
   return (
     <div>
@@ -18,11 +18,11 @@ const Home = () => {
               </p>
               <Link href="/login">
                 <button
-                type="button"
-                className="h-10 w-50 rounded-lg  absolute top-[65%] ml-180 hover:bg-sky-700 cursor-pointer font-bold boder-2xl bg-white text-black"
-              >
-                Login
-              </button>
+                  type="button"
+                  className="h-10 w-50 rounded-lg  absolute top-[65%] ml-180 hover:bg-sky-700 cursor-pointer font-bold boder-2xl bg-white text-black"
+                >
+                  Login
+                </button>
               </Link>
               <Link href="/sign-up">
                 <button
