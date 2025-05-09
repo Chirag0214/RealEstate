@@ -1,4 +1,5 @@
 // Footer.jsx
+import { IconBrandFacebook, IconBrandInstagram, IconBrandWhatsapp, IconBrandYoutube } from '@tabler/icons-react';
 import React from 'react';
 
 const Footer = () => {
@@ -39,10 +40,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
           <div className="flex gap-4 mt-2 text-xl">
-            <a href="#" className="hover:text-blue-300"></a>
-            <a href="#" className="hover:text-blue-300">📘</a>
-            <a href="#" className="hover:text-blue-300">📸</a>
-            <a href="#" className="hover:text-blue-300">🐦</a>
+            <a href="#" className="hover:text-blue-300"><IconBrandFacebook/></a>
+            <a href="#" className="hover:text-blue-300"><IconBrandYoutube/></a>
+            <a href="#" className="hover:text-blue-300"><IconBrandInstagram/></a>
+            <a href="#" className="hover:text-blue-300"><IconBrandWhatsapp/></a>
           </div>
         </div>
       </div>
