@@ -69,7 +69,7 @@ function page() {
     <div>
       <h6 className="text-center">
         Already have an account?
-        <a href="#">
+        <a href="/login">
           <samp className="text-green-900"> Login</samp>
         </a>{" "}
       </h6>

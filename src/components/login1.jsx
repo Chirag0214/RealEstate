@@ -52,7 +52,7 @@ const page = () => {
         <div>
           <h6 className="text-center">
             Don't have an account?
-            <a href="/sign-up">
+            <a href="#">
               <samp className="text-green-900">SignUp</samp>
             </a>{" "}
           </h6>

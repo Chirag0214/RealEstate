@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import React from 'react'
 
 const Navbar = () => {
   return (
     <header className="bg-black">
-      <nav className="flex justify-between items-center h-[70px] text-white">
+      <nav className="flex justify-between items-center h-[70px] text-white ">
         <div className="flex items-center justify-center  gap-2">
           <img
             className="w-[100px] h-[70px]"
@@ -16,20 +17,24 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center font-bold gap-7 text-lg text-white p-2 m-4">
           <li>
-            <a href="#" />
+            <Link href="/">
             Home
+            </Link>
           </li>
           <li>
-            <a href="" />
+            <Link href="#about">
             About
+            </Link>
           </li>
           <li>
-            <a href="" />
+            <Link href="#contact">
             Contact
+            </Link>
           </li>
           <li>
-            <a href="" />
+            <Link href="#projects">
             Projects
+            </Link>
           </li>
         </ul>
       </nav>
