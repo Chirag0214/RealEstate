@@ -1,12 +1,64 @@
+'use client';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect } from 'react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Home = () => {
+
+  useEffect(() => {
+    // Import Swiper dynamically (client-side only)
+    const initSwiper = async () => {
+      if (typeof window !== 'undefined') {
+        const Swiper = (await import('swiper')).default;
+        // Import required modules
+        const { Navigation, Pagination, Autoplay } = await import('swiper/modules');
+
+        // Initialize Swiper
+        const swiper = new Swiper('.mySwiper', {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+          },
+          modules: [Navigation, Pagination, Autoplay],
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          },
+        });
+      }
+    };
+
+    initSwiper();
+  }, []);
+
   return (
     <div>
       <main className="bg-white">
         {/* Hero */}
-        <section className=" min-h-[75vh] w-[95%]">
+        <section className=" min-h-[75vh] w-[95%] mx-auto">
           <div className="min-h-[75vh] w-[95%] relative ">
             <img className="h-[600px] w-[100%] mx-13 pl-5 filter:blur-sm" src="/home-1.jpg" />
             <div>
@@ -36,63 +88,111 @@ const Home = () => {
           </div>
         </section>
         {/* Hero end */}
+
         {/* Projects */}
-        <section id='projects' className=" min-h-[75vh] w-[95%] ">
-          <h2 className=" text-5xl text-center font-bold py-10">Projects</h2>
-          <div className="w-[85%] mx-auto grid grid-cols-6 gap-10">
-            {/* Home-1 */}
-            <div className=" border-3 rounded-xl">
-              <img
-                className="h-[300px] w-[100%] rounded-xl"
-                src="/home-2.jpeg"
-                alt="Home-1"
-              />
-            </div>
-            {/* Home-2 */}
-            <div className="border-3 rounded-xl">
-              <img
-                className="h-[300px] w-[100%] rounded-xl"
-                src="/home-3.jpeg"
-                alt="Home-2"
-              />
-            </div>
-            {/* Home-3 */}
-            <div className="border-3 rounded-xl">
-              <img
-                className="h-[300px] w-[100%] rounded-xl"
-                src="/home-4.jpeg"
-                alt="Home-3"
-              />
-            </div>
-            {/* Home-4 */}
-            <div className="border-3 rounded-xl">
-              <img
-                className="h-[300px] w-[100%] rounded-xl"
-                src="/home-5.jpeg"
-                alt="Home-4"
-              />
-            </div>
-            {/* Home-5 */}
-            <div className="border-3 rounded-xl">
-              <img
-                className="h-[300px] w-[100%] rounded-xl"
-                src="/home-6.jpeg"
-                alt="Home-5"
-              />
-            </div>
-            {/* Home-6 */}
-            <div className="border-3 rounded-xl">
-              <img
-                className="h-[300px] w-[100%] rounded-xl"
-                src="/home-7.jpg"
-                alt="Home-6"
-              />
+        <section id='projects' className="min-h-[75vh] w-[95%] mx-auto py-10">
+          <h2 className="text-5xl text-center font-bold pb-10">Projects</h2>
+          <div className="w-[95%] mx-auto">
+            {/* Swiper Component */}
+            <div className="swiper-container">
+              <div className="swiper mySwiper">
+                <div className="swiper-wrapper">
+                  {/* Home-1 */}
+                  <div className="swiper-slide">
+                    <div className="border-3 rounded-xl shadow-lg">
+                      <img
+                        className="h-[350px] w-full rounded-xl object-cover"
+                        src="/home-2.jpeg"
+                        alt="Home-1"
+                      />
+                      <div className="p-4 bg-white rounded-b-xl">
+                        <h3 className="text-xl font-semibold">Modern Villa</h3>
+                        <p className="text-gray-600">Luxury 4BHK with garden</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Home-2 */}
+                  <div className="swiper-slide">
+                    <div className="border-3 rounded-xl shadow-lg">
+                      <img
+                        className="h-[350px] w-full rounded-xl object-cover"
+                        src="/home-3.jpeg"
+                        alt="Home-2"
+                      />
+                      <div className="p-4 bg-white rounded-b-xl">
+                        <h3 className="text-xl font-semibold">Urban Apartment</h3>
+                        <p className="text-gray-600">Premium 3BHK with balcony</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Home-3 */}
+                  <div className="swiper-slide">
+                    <div className="border-3 rounded-xl shadow-lg">
+                      <img
+                        className="h-[350px] w-full rounded-xl object-cover"
+                        src="/home-4.jpeg"
+                        alt="Home-3"
+                      />
+                      <div className="p-4 bg-white rounded-b-xl">
+                        <h3 className="text-xl font-semibold">Countryside Home</h3>
+                        <p className="text-gray-600">Spacious 3BHK farmhouse</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Home-4 */}
+                  <div className="swiper-slide">
+                    <div className="border-3 rounded-xl shadow-lg">
+                      <img
+                        className="h-[350px] w-full rounded-xl object-cover"
+                        src="/home-5.jpeg"
+                        alt="Home-4"
+                      />
+                      <div className="p-4 bg-white rounded-b-xl">
+                        <h3 className="text-xl font-semibold">Beach House</h3>
+                        <p className="text-gray-600">Luxury waterfront property</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Home-5 */}
+                  <div className="swiper-slide">
+                    <div className="border-3 rounded-xl shadow-lg">
+                      <img
+                        className="h-[350px] w-full rounded-xl object-cover"
+                        src="/home-6.jpeg"
+                        alt="Home-5"
+                      />
+                      <div className="p-4 bg-white rounded-b-xl">
+                        <h3 className="text-xl font-semibold">Mountain Retreat</h3>
+                        <p className="text-gray-600">Cozy 2BHK hillside cabin</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Home-6 */}
+                  <div className="swiper-slide">
+                    <div className="border-3 rounded-xl shadow-lg">
+                      <img
+                        className="h-[350px] w-full rounded-xl object-cover"
+                        src="/home-7.jpg"
+                        alt="Home-6"
+                      />
+                      <div className="p-4 bg-white rounded-b-xl">
+                        <h3 className="text-xl font-semibold">City Penthouse</h3>
+                        <p className="text-gray-600">Exclusive rooftop living</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* <div className="swiper-pagination "></div> */}
+              </div>
+              {/* <div className="swiper-button-next"></div> */}
+              {/* <div className="swiper-button-prev"></div> */}
             </div>
           </div>
         </section>
         {/* Projects end */}
+
         {/* About */}
-        <section id='about' className=" min-h-[75vh] w-[95%] bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 ">
+        <section id='about' className=" min-h-[75vh] w-[95%] mx-auto bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 ">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-5xl font-bold text-center mb-10">
               About
@@ -150,8 +250,9 @@ const Home = () => {
           </div>
         </section>
         {/* About end */}
+
         {/* Contact */}
-        <section id='contact' className="w-[95%] bg-gray-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <section id='contact' className="w-[95%] mx-auto bg-gray-100 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
             <h2 className="text-5xl font-bold text-center text-blue-800 mb-8">
               Contact
