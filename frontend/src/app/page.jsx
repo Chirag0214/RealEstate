@@ -102,7 +102,7 @@ const Home = () => {
                     <div className="border-3 rounded-xl shadow-lg">
                       <img
                         className="h-[350px] w-full rounded-xl object-cover"
-                        src="/home-2.jpeg"
+                        src="/Vila.jpg"
                         alt="Home-1"
                       />
                       <div className="p-4 bg-white rounded-b-xl">
@@ -116,7 +116,7 @@ const Home = () => {
                     <div className="border-3 rounded-xl shadow-lg">
                       <img
                         className="h-[350px] w-full rounded-xl object-cover"
-                        src="/home-3.jpeg"
+                        src="/apartment.jpg"
                         alt="Home-2"
                       />
                       <div className="p-4 bg-white rounded-b-xl">
@@ -130,7 +130,7 @@ const Home = () => {
                     <div className="border-3 rounded-xl shadow-lg">
                       <img
                         className="h-[350px] w-full rounded-xl object-cover"
-                        src="/home-4.jpeg"
+                        src="/home-3.jpg"
                         alt="Home-3"
                       />
                       <div className="p-4 bg-white rounded-b-xl">
@@ -144,7 +144,7 @@ const Home = () => {
                     <div className="border-3 rounded-xl shadow-lg">
                       <img
                         className="h-[350px] w-full rounded-xl object-cover"
-                        src="/home-5.jpeg"
+                        src="/beach home.jpg"
                         alt="Home-4"
                       />
                       <div className="p-4 bg-white rounded-b-xl">
@@ -158,7 +158,7 @@ const Home = () => {
                     <div className="border-3 rounded-xl shadow-lg">
                       <img
                         className="h-[350px] w-full rounded-xl object-cover"
-                        src="/home-6.jpeg"
+                        src="/home.jpg"
                         alt="Home-5"
                       />
                       <div className="p-4 bg-white rounded-b-xl">
@@ -219,7 +219,7 @@ const Home = () => {
               {/* Right Column - Image */}
               <div>
                 <img
-                  src="/home-4.jpeg"
+                  src="/bg home .jpg"
                   alt="home img"
                   className="rounded-2xl shadow-lg w-full h-auto object-cover"
                 />
