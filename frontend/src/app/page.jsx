@@ -57,21 +57,36 @@ const Home = () => {
   return (
     <div>
       <main className="bg-white">
-        {/* Hero */}
-        <section className=" min-h-[75vh] w-[95%] mx-auto">
-          <div className="min-h-[75vh] w-[95%] relative ">
-            <img className="h-[600px] w-[100%] mx-13 pl-5 filter:blur-sm" src="/home-1.jpg" />
-            <div>
-              <h4 className="absolute text-center top-[33%] w-[100%] ml-10 font-bold text-8xl">
-                <i>DREAM HOME</i>
-              </h4>
-              <p className="absolute text-center top-[48%] text-white w-[100%] ml-10 font-bold text-2xl">
-                Find your modern and affortable sweet home.
-              </p>
+          {/* Hero */}
+        <section className="relative h-screen w-full overflow-hidden">
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0">
+            <img 
+              src="https://images.pexels.com/photos/9203764/pexels-photo-9203764.jpeg" 
+              alt="Dream Home Background" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50"></div>
+          </div>
+          
+          {/* Content Container */}
+          <div className="relative h-full flex flex-col items-center justify-center px-4 text-center z-10">
+            {/* Main Heading with animated entrance */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 animate-fadeIn">
+              <span className="italic">DREAM HOME</span>
+            </h1>
+            
+            {/* Subtext */}
+            <p className="text-xl md:text-2xl text-white font-medium max-w-2xl mb-10">
+              Find your modern and affordable sweet home with us.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <Link href="/login">
                 <button
                   type="button"
-                  className="h-10 w-50 rounded-lg  absolute top-[65%] ml-180 hover:bg-sky-700 cursor-pointer font-bold boder-2xl bg-white text-black"
+                  className="px-8 py-3 bg-white text-gray-800 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 font-semibold min-w-[140px]"
                 >
                   Login
                 </button>
@@ -79,9 +94,9 @@ const Home = () => {
               <Link href="/sign-up">
                 <button
                   type="button"
-                  className="h-10 w-50 rounded-lg  absolute top-[65%] ml-100 hover:bg-sky-700 cursor-pointer font-bold boder-2xl bg-white text-black"
+                  className="px-8 py-3 bg-transparent text-white border-2 border-white rounded-lg hover:bg-white hover:text-gray-800 transition-all duration-300 font-semibold min-w-[140px]"
                 >
-                  SignUp
+                  Sign Up
                 </button>
               </Link>
             </div>
