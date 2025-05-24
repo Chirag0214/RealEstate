@@ -2,6 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import toast, { Toaster } from 'react-hot-toast'
+import axios from 'axios'
 
 const Login = () => {
   const formik = useFormik({
@@ -14,9 +15,23 @@ const Login = () => {
       email: Yup.string().email('Invalid email address').required('Required'),
       password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
     }),
-    onSubmit: (values) => {
-      toast.success('Login successful!')
-      // Add your login logic here
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      try {
+        const res = await axios.post('http://localhost:5000/user/authenticate', {
+          email: values.email,
+          password: values.password,
+        })
+        toast.success('Login successful!')
+        resetForm()
+      } catch (err) {
+        if (err.response && err.response.data && err.response.data.message) {
+          toast.error(err.response.data.message)
+        } else {
+          toast.error('Login failed!')
+        }
+      } finally {
+        setSubmitting(false)
+      }
     },
   })
   return (

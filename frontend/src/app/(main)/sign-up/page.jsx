@@ -2,6 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import toast, { Toaster } from 'react-hot-toast'
+import axios from 'axios'
 
 const SignUp = () => {
   const formik = useFormik({
@@ -21,9 +22,24 @@ const SignUp = () => {
         .required('Confirm Password is required'),
       agree: Yup.boolean().oneOf([true], 'You must agree to terms & conditions'),
     }),
-    onSubmit: (values) => {
-      toast.success('Account created successfully!')
-      // Add your signup logic here
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      try {
+        const res = await axios.post('http://localhost:5000/user/add', {
+          name: values.username,
+          email: values.email,
+          password: values.password,
+        })
+        toast.success('Account created successfully!')
+        resetForm()
+      } catch (err) {
+        if (err.response && err.response.data && err.response.data.message) {
+          toast.error(err.response.data.message)
+        } else {
+          toast.error('Sign up failed!')
+        }
+      } finally {
+        setSubmitting(false)
+      }
     },
   })
   return (
