@@ -12,7 +12,7 @@ const Navbar = () => {
           {/* Logo and Brand Name */}
           <div className="flex items-center space-x-2">
             <img
-              className="h-12 w-auto"
+              className="h-20 w-auto"
               src="/Dream Home (Postcards).png"
               alt="DREAM HOME"
             />

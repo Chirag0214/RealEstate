@@ -86,7 +86,7 @@ const Home = () => {
               <Link href="/login">
                 <button
                   type="button"
-                  className="px-8 py-3 bg-white text-gray-800 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 font-semibold min-w-[140px]"
+                  className="px-8 py-3 bg-transparent text-white border-2 border-white rounded-lg hover:bg-white hover:text-gray-800 transition-all duration-300 font-semibold min-w-[140px]"
                 >
                   Login
                 </button>
